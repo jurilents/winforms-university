@@ -404,10 +404,6 @@
             this.Status.Name = "Status";
             this.Status.ReadOnly = true;
             // 
-            // resultLogBindingSource
-            // 
-            this.resultLogBindingSource.DataSource = typeof(JustLab2.ResultLog);
-            // 
             // backgroudJobBindingSource
             // 
             this.backgroudJobBindingSource.DataSource = typeof(JustLab2.BackgroudJob);
