@@ -1,4 +1,4 @@
-﻿using JustWinFormsCalc.CalcWfcServiceReference;
+﻿using JustWinFormsCalc.JustWcfServiceCalc.Clients.Auth;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,8 +21,8 @@ namespace JustWinFormsCalc
         private void submit_Click(object sender, EventArgs e)
         {
             var authClient = new AuthServiceClient();
-            // var user = authClient.Authenticate(loginField.Text, passwordField.Text);
-            var user = authClient.Authenticate("admin", "admin");
+            var user = authClient.Authenticate(loginField.Text, passwordField.Text);
+            //var user = authClient.Authenticate("admin", "admin");
 
             if (user == null)
             {

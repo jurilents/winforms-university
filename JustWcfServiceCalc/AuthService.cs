@@ -9,7 +9,7 @@ namespace JustWcfServiceCalc
 {
     public class AuthService : IAuthService
     {
-        private readonly MySecretDatabase _database = new MySecretDatabase();
+        private readonly MySecretDatabase _database = MySecretDatabase.Instance;
 
 
         public UserContract Authenticate(string login, string password)

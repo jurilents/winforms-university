@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JustWinFormsCalc.CalcWfcServiceReference {
+namespace JustWinFormsCalc.JustWcfServiceCalc.Clients.Auth {
     using System.Runtime.Serialization;
     using System;
     
@@ -75,23 +75,23 @@ namespace JustWinFormsCalc.CalcWfcServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CalcWfcServiceReference.IAuthService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="JustWcfServiceCalc.Clients.Auth.IAuthService")]
     public interface IAuthService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthService/Authenticate", ReplyAction="http://tempuri.org/IAuthService/AuthenticateResponse")]
-        JustWinFormsCalc.CalcWfcServiceReference.UserContract Authenticate(string login, string password);
+        JustWinFormsCalc.JustWcfServiceCalc.Clients.Auth.UserContract Authenticate(string login, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthService/Authenticate", ReplyAction="http://tempuri.org/IAuthService/AuthenticateResponse")]
-        System.Threading.Tasks.Task<JustWinFormsCalc.CalcWfcServiceReference.UserContract> AuthenticateAsync(string login, string password);
+        System.Threading.Tasks.Task<JustWinFormsCalc.JustWcfServiceCalc.Clients.Auth.UserContract> AuthenticateAsync(string login, string password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IAuthServiceChannel : JustWinFormsCalc.CalcWfcServiceReference.IAuthService, System.ServiceModel.IClientChannel {
+    public interface IAuthServiceChannel : JustWinFormsCalc.JustWcfServiceCalc.Clients.Auth.IAuthService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AuthServiceClient : System.ServiceModel.ClientBase<JustWinFormsCalc.CalcWfcServiceReference.IAuthService>, JustWinFormsCalc.CalcWfcServiceReference.IAuthService {
+    public partial class AuthServiceClient : System.ServiceModel.ClientBase<JustWinFormsCalc.JustWcfServiceCalc.Clients.Auth.IAuthService>, JustWinFormsCalc.JustWcfServiceCalc.Clients.Auth.IAuthService {
         
         public AuthServiceClient() {
         }
@@ -112,11 +112,11 @@ namespace JustWinFormsCalc.CalcWfcServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public JustWinFormsCalc.CalcWfcServiceReference.UserContract Authenticate(string login, string password) {
+        public JustWinFormsCalc.JustWcfServiceCalc.Clients.Auth.UserContract Authenticate(string login, string password) {
             return base.Channel.Authenticate(login, password);
         }
         
-        public System.Threading.Tasks.Task<JustWinFormsCalc.CalcWfcServiceReference.UserContract> AuthenticateAsync(string login, string password) {
+        public System.Threading.Tasks.Task<JustWinFormsCalc.JustWcfServiceCalc.Clients.Auth.UserContract> AuthenticateAsync(string login, string password) {
             return base.Channel.AuthenticateAsync(login, password);
         }
     }

@@ -8,6 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>JustWinFormsCalc</RootNamespace>
     <AssemblyName>JustWinFormsCalc</AssemblyName>
+	<LangVersion>8</LangVersion>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -54,7 +55,12 @@
     <Compile Include="CalculatorForm.Designer.cs">
       <DependentUpon>CalculatorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\CalcWfcServiceReference\Reference.cs">
+    <Compile Include="Connected Services\JustWcfServiceCalc.Clients.Auth\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\JustWcfServiceCalc.Clients.Calculator\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -79,17 +85,30 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\CalcWfcServiceReference\JustWcfServiceCalc.xsd">
+    <None Include="Connected Services\JustWcfServiceCalc.Clients.Auth\JustWcfServiceCalc.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\CalcWfcServiceReference\JustWinFormsCalc.CalcWfcServiceReference.UserContract.datasource">
+    <None Include="Connected Services\JustWcfServiceCalc.Clients.Auth\JustWinFormsCalc.JustWcfServiceCalc.Clients.Auth.UserContract.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\CalcWfcServiceReference\service.wsdl" />
-    <None Include="Connected Services\CalcWfcServiceReference\service.xsd">
+    <None Include="Connected Services\JustWcfServiceCalc.Clients.Auth\service.wsdl" />
+    <None Include="Connected Services\JustWcfServiceCalc.Clients.Auth\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\CalcWfcServiceReference\service1.xsd">
+    <None Include="Connected Services\JustWcfServiceCalc.Clients.Auth\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\JustWcfServiceCalc.Clients.Calculator\JustWcfServiceCalc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\JustWcfServiceCalc.Clients.Calculator\JustWinFormsCalc.JustWcfServiceCalc.Clients.Calculator.CalcResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\JustWcfServiceCalc.Clients.Calculator\service.wsdl" />
+    <None Include="Connected Services\JustWcfServiceCalc.Clients.Calculator\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\JustWcfServiceCalc.Clients.Calculator\service1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">
@@ -117,16 +136,29 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\CalcWfcServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\JustWcfServiceCalc.Clients.Auth\" />
+    <WCFMetadataStorage Include="Connected Services\JustWcfServiceCalc.Clients.Calculator\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\CalcWfcServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\JustWcfServiceCalc.Clients.Auth\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\CalcWfcServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\JustWcfServiceCalc.Clients.Auth\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\CalcWfcServiceReference\Reference.svcmap">
+    <None Include="Connected Services\JustWcfServiceCalc.Clients.Auth\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\JustWcfServiceCalc.Clients.Calculator\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\JustWcfServiceCalc.Clients.Calculator\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\JustWcfServiceCalc.Clients.Calculator\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
