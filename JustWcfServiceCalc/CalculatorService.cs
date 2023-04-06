@@ -14,6 +14,7 @@ namespace JustWcfServiceCalc
             var result = contract.A + contract.B;
             return CalcResponse.FromResult(result);
         }
+
         public CalcResponse Substract(CalcContract contract)
         {
             if (!_database.CheckToken(contract.Token))

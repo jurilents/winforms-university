@@ -11,17 +11,17 @@ public enum RunMode
 
 public class BackgroudJob
 {
-    public delegate double AlgFunc(int index);
+    public delegate int AlgFunc(int index);
 
     private static readonly AlgFunc[] algs = new AlgFunc[]
     {
-        (i) => ((double) i) / 10,
-        (i) => ((double) i) / Math.PI,
-        (i) => Math.Exp(i) / Math.Pow(i, Math.PI),
-        (i) => Math.Exp(i* Math.PI) / Math.Pow(i, Math.PI),
+        (i) => (int)((double) i) / 10,
+        (i) => (int)(((double) i) / Math.PI),
+        (i) => (int)(Math.Exp(i) / Math.Pow(i, Math.PI)),
+        (i) => (int)(Math.Exp(i* Math.PI) / Math.Pow(i, Math.PI)),
     };
 
-    private double[] array;
+    private int[] array;
     private int difficultyValue;
     private double braakFrom;
     private double breakTo;
@@ -74,7 +74,7 @@ public class BackgroudJob
         double rangeTo,
         bool useBreakRange)
     {
-        array = new double[arrayLength];
+        array = new int[arrayLength];
         difficultyValue = difficulty;
         braakFrom = (double)rangeFrom;
         breakTo = (double)rangeTo;
