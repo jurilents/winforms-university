@@ -53,7 +53,7 @@
             Height = height;
         }
 
-        public void RecalculatePrice()
+        private void RecalculatePrice()
         {
             Price = _priceCoef * Width * Height * Crew.RecommendedCapacity;
         }

@@ -27,8 +27,6 @@ namespace JustWpfFigureLab
             _figure = figureServiceClient.Load();
 
             offsetTopBox.Text = _figure.OffsetTop.ToString();
-
-            offsetTopBox.Text = _figure.OffsetTop.ToString();
             offsetLeftBox.Text = _figure.OffsetLeft.ToString();
             heightBox.Text = _figure.Height.ToString();
             widthBox.Text = _figure.Width.ToString();

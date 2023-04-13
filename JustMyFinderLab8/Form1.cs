@@ -101,7 +101,17 @@ namespace JustMyFinderLab8
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            RefreshTreeView();
+            var files = Directory.GetFiles(selectedNode.FullPath, "*" + searchTextBox.Text + "*", SearchOption.AllDirectories);
+            var searchNode = new TreeNode(selectedNode.FullPath);
+
+            foreach (var file in files)
+            {
+                var fi = new FileInfo(file);
+                searchNode.Nodes.Add(fi.Name);
+            }
+
+            treeView.Nodes.Clear();
+            treeView.Nodes.Add(searchNode);
         }
 
         private void openButton_Click(object sender, EventArgs e)
@@ -172,7 +182,6 @@ namespace JustMyFinderLab8
 
         private void RefreshTreeView(TreeViewCancelEventArgs e)
         {
-            var filter = searchTextBox.Text;
             e.Node.Nodes.Clear();
             try
             {
@@ -184,12 +193,9 @@ namespace JustMyFinderLab8
                         for (int i = 0; i < dirs.Length; i++)
                         {
                             var di = new DirectoryInfo(dirs[i]);
-                            if (string.IsNullOrWhiteSpace(filter) || di.Name.Contains(filter))
-                            {
-                                var dirNode = new TreeNode(di.Name);
-                                FillTreeNode(dirNode, dirs[i]);
-                                e.Node.Nodes.Add(dirNode);
-                            }
+                            var dirNode = new TreeNode(di.Name);
+                            FillTreeNode(dirNode, dirs[i]);
+                            e.Node.Nodes.Add(dirNode);
                         }
                     }
 
@@ -199,12 +205,9 @@ namespace JustMyFinderLab8
                         for (int i = 0; i < files.Length; i++)
                         {
                             var fi = new FileInfo(files[i]);
-                            if (string.IsNullOrWhiteSpace(filter) || fi.Name.Contains(filter))
-                            {
-                                var fileNode = new TreeNode(fi.Name);
-                                FillTreeNode(fileNode, files[i]);
-                                e.Node.Nodes.Add(fileNode);
-                            }
+                            var fileNode = new TreeNode(fi.Name);
+                            FillTreeNode(fileNode, files[i]);
+                            e.Node.Nodes.Add(fileNode);
                         }
                     }
                 }
